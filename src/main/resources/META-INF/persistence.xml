@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    <persistence-unit name="DemoPU" transaction-type="JTA">
+        <jta-data-source>jdbc/__default</jta-data-source>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <properties>
+            <!-- this is no clean persistence.xml, since it was only made for demonstration and made it to work with Glassfish 3 / 4 alike -->
+        
+            <property name="javax.persistence.schema-generation.database.action" value="create"/>
+            <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+      
+            <!-- for logging of transaction messages -->
+            <property name="eclipselink.logging.logger" value="JavaLogger"/>
+            <!-- TODO uncomment to log transaction status -->
+            <!-- <property name="eclipselink.logging.level" value="FINER"/> -->
+      
+      
+        </properties>
+    </persistence-unit>
+</persistence>
